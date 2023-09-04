@@ -36,9 +36,16 @@
             el.src = place.profilepic;
             el.alt = 'Foto de lugar';
             el.className = 'marker';
-            el.onclick = () => {point = place};
+            el.onclick = () => {
+                point = place;
+                map.flyTo({
+                    center: [place.longitude/1000000, place.latitude/1000000],
+                    zoom: 18,
+                    essential: true // this animation is considered essential with respect to prefers-reduced-motion
+                });
+            };
 
-            results.push(new mapboxgl.Marker(el).setLngLat([place.longitude/1000000, place.latitude/1000000,]).addTo(map));
+            results.push(new mapboxgl.Marker(el).setLngLat([place.longitude/1000000, place.latitude/1000000]).addTo(map));
         }
     }
 </script>
@@ -105,7 +112,7 @@
         font-size: 14px;
     }
     li {
-        margin: 6px 0;
+        margin: 8px 0;
     }
     li:first-child {
         margin-top: 0;
@@ -115,6 +122,8 @@
     }
     button {
         display: block;
+        width: 100%;
+        text-align: left;
         background-color: transparent;
         border: none;
     }

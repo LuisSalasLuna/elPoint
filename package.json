@@ -1,0 +1,22 @@
+{
+	"name": "elpoint",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/kit": "^1.20.4",
+		"svelte": "^4.0.5",
+		"vite": "^4.4.2"
+	},
+	"type": "module",
+	"dependencies": {
+		"@supabase/supabase-js": "^2.33.1",
+		"@turf/distance": "^6.5.0",
+		"mapbox-gl": "^2.15.0"
+	}
+}

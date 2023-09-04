@@ -8,9 +8,9 @@
 
     let subcategories = [
         ['Telos', 'Farmacias'],
-        ['Bodegas', 'Licoreras', 'Señitos'],
+        ['Bodegas', 'Licores', 'Señitos'],
         ['Bares', 'Discotecas', 'Karaokes'],
-        ['Salchipapas', 'Hamburguesas', 'Emolientes', 'Helados', 'Callejeras'],
+        ['Pizzerías','Salchipapa', 'Hamburguesas', 'Emolientes', 'Helados', 'Callejera', 'Anticucho','Popcorn'],
         ['Estacionamientos', 'Paraderos', 'Basureros', 'Cajeros', 'Agentes']
     ]
 
@@ -21,11 +21,17 @@
         .rpc('get_points3', {
             lat_input: $geo_lat.toString(), 
             lon_input: $geo_lng.toString(), 
-            radius: "5000"
+            radius: "50000"
         })
 
         if (error) console.error(error)
-        else console.log(places)
+        else {
+            if (place) {
+                places = places.filter(obj => {
+                    return obj.tags && obj.tags.some(tag => tag.includes(place));
+                });
+            }   
+        }
 
         for (const previous of results) {
             previous.remove()

@@ -1,38 +1,80 @@
 @font-face {
-    font-display: swap;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 300;
-    src: url('/fonts/poppins-v20-latin-300.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-         url('/fonts/poppins-v20-latin-300.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
-}
-
-@font-face {
-    font-display: swap;
-    font-family: 'Poppins';
-    font-style: bold;
-    font-weight: 600;
-    src: url('/fonts/poppins-v20-latin-600.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-         url('/fonts/poppins-v20-latin-600.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+  font-family: 'Mona Sans';
+  src:
+    url('fonts/Mona-Sans.woff2') format('woff2 supports variations'),
+    url('fonts/Mona-Sans.woff2') format('woff2-variations');
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+  font-display: swap;
 }
 
 * {
-    --shadow: #00000044 0px 0px 4px;
-    
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Mona Sans';
+
+  --dark-gray: #767676;
+  --success: #6BBD44;
+  --warning: #FFA800;
+  --error: #FF3E1E;
+  --white: #FFFFFF;
+  --black: #000000;
 }
 
-.marker {
-    object-fit: cover;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 3px solid black;
+@media (prefers-color-scheme: dark) {
+ * {
+  --dark-gray: #9D9D9D;
+  --success: #70bc4a;
+  --warning: #FFB320;
+  --error: #FF583C;
+  --white: #242424;
+  --black: #EDEDED;
+ }
 }
-.marker.user {
-    border: 3px solid #00aeff;
+
+body {
+  background-color: #494949;
+  color: var(--black);
+  min-height: 100vh;
+}
+
+.items-center {
+  align-items: center;
+}
+.flex-4 {
+  display: flex;
+  gap: 4px;
+}
+
+h1 {
+  font-size: 24px;
+  line-height: 24px;
+}
+h2 {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.dark-gray {
+  color: var(--dark-gray);
+}
+.green {
+  color: var(--success);
+}
+.red {
+  color: var(--error);
+}
+.orange {
+  color: var(--warning);
+}
+
+.green path {
+  fill: var(--success);
+}
+.red path{
+  fill: var(--error);
+}
+.orange path{
+  fill: var(--warning);
 }

@@ -1,0 +1,38 @@
+{
+	"points": [
+    {
+			"id": "12756238562387",
+			"category": "Supermercado",
+			"name": "El Super",
+			"coords": [ -16.4090, -71.5375 ],
+			"stars": 1,
+			"media": "https://www.cencosud.com/cencosud/site/artic/20220310/imag/foto_0000002620220310141152/Jumbo_saludable_1.jpg",
+			"location": "Portal de la Municipalidad 113, Plaza de Armas",
+			"schedule": [
+					["07:00", "12:50"],
+					["15:00", "18:00"]
+			],
+			"details": "Hoy PROMO!!! Dos salchipapas familiares a tan solo S/36.00. Esta promoción es super larga y abarca 3 líneas.",
+			"phone": "940 - 185 - 837",
+			"instagram": "la_donna",
+			"payment": "efectivo y Yape",
+			"wc": true,
+			"tags": ["supermercado", "licores", "compras"]
+    },
+    {
+        "id": "1654172654176",
+        "category": "Tía Veneno",
+        "name": "Flora",
+        "coords": [ -16.4100, -71.5385 ],
+        "stars": 3,
+        "media": "https://larepublica.cronosmedia.glr.pe/migration/images/OZBCUDRAHVAEFMBIGU6PMHJP2Y.jpg",
+        "location": "San Agustín con Santo Domingo, Cercado",
+        "schedule": [
+            ["17:00", "05:00"]
+        ],
+        "details": "Hot-Dogs a S/3.50 y Hamburguesa a S/5.00",
+        "payment": "efectivo",
+        "tags": ["tia veneno", "sandwich", "carretilla"]
+    }
+	]
+}

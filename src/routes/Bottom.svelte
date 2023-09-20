@@ -66,13 +66,14 @@
 	<div
 		bind:this={sheetContent}
 		class="content"
-		style:height={`${us_height}vh`}
+		style:height={`${us_height}dvh`}
 	>
 		<div
 			bind:this={dragIcon}
 			class="drag-icon"
 			role="button"
 			tabindex="0"
+			title="drag"
 			on:mousedown={dragStart}
 			on:touchstart={dragStart}
 		>
@@ -114,22 +115,12 @@
 		opacity: 1;
 		pointer-events: auto;
 	}
-	/* .bottom-sheet .sheet-overlay {
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: -1;
-		width: 100%;
-		height: 100%;
-		opacity: 0.2;
-		background: #000;
-	} */
 	.bottom-sheet .content {
 		width: 100%;
 		position: relative;
 		background-color: var(--white);
-		max-height: 100vh;
-		height: 50vh;
+		max-height: 100dvh;
+		height: 50dvh;
 		max-width: 1080px;
 		transform: translateY(100%);
 		border-radius: 32px 32px 0 0;
@@ -149,7 +140,6 @@
 	}
 	.drag-icon {
 		cursor: grab;
-		user-select: none;
 		display: flex;
 		justify-content: center;
 		padding: 20px 0;

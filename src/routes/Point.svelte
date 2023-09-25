@@ -7,11 +7,12 @@
 	export let media = 'https://i0.wp.com/thinkfirstcommunication.com/wp-content/uploads/2022/05/placeholder-1-1.png?fit=1200%2C800&ssl=1'
 	export let category = 'Categoria'
 	export let stars = 0
-	export let coords = [ -16.4180, -71.5275 ]
+	export let latitude = -16.4180
+	export let longitude = -71.5275
 	export let schedule = undefined
 	export let details = 'No hay descripción'
 
-	$: distance = distancia(coords, [ -16.4180, -71.5275 ])
+	$: distance = distancia([latitude, longitude], [ -16.4180, -71.5275 ])
 	$: todays_schedule = schedule ? estadoLocal(schedule, new Date().toLocaleTimeString('es-PE', {timeStyle: 'short'})) : 'Abierto todo el día'
 
 	$: red    = todays_schedule[0] == 'C'
@@ -21,7 +22,7 @@
 
 <article bind:clientHeight={width}>
 	<main>
-		<img src={media} alt={name}>
+		<img src={media} alt={name} draggable="false">
 		<header class="dark-gray items-center">
 			<div class="flex-8 items-center">
 				<h2>{category}</h2>

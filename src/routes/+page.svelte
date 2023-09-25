@@ -1,11 +1,13 @@
 <script>
-    import Bottom from "./Bottom.svelte";
-    import Point from "./Point.svelte";
+    import Bottom from "./Bottom.svelte"
+    import Point from "./Point.svelte"
+    import Points from "./Points.svelte"
     import Info from "./Info.svelte"
     import Map from "./Map.svelte"
-    import MapMarker from "./MapMarker.svelte";
+    import MapMarker from "./MapMarker.svelte"
+    import Searchbar from "./Searchbar.svelte"
 
-    let width, show = false
+    let width, show = false, points = [], show_results = false
 
     let point = {
         "id": "12756238562387",
@@ -44,8 +46,13 @@
     <MapMarker lat={-16.39881} lon={-71.5369} />
 </Map>
 
+<Searchbar bind:points={points} bind:show={show} bind:show_results={show_results}/>
 
 <Bottom {width} bind:show={show}>
-    <Point {...point} bind:width={width}/>
-    <Info  {point}/>
+    {#if show_results}
+        <Points {points} bind:show_results={show_results} bind:selected={point}/>
+    {:else}
+        <Point {...point} bind:width={width}/>
+        <Info  {point}/>
+    {/if}
 </Bottom>

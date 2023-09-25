@@ -15,27 +15,29 @@
   font-family: 'Mona Sans';
 
   --dark-gray: #767676;
-  --success: #6BBD44;
-  --warning: #FFA800;
-  --error: #FF3E1E;
-  --white: #FFFFFF;
-  --black: #000000;
+  --open: #6BBD44;
+  --closing: #FFA800;
+  --closed: red;
+  --primary: #ff6f55;
+  --background: #FFFFFF;
+  --text: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
  * {
   --dark-gray: #9D9D9D;
-  --success: #70bc4a;
-  --warning: #FFB320;
-  --error: #D1E94B;
-  --white: #04121F;
-  --black: #EDEDED;
+  --open: #D1E94B;
+  --closing: #F2A43A;
+  --closed: #C1307E;
+  --primary: #D1E94B;
+  --background: #04121F;
+  --text: #EDEDED;
  }
 }
 
 body {
   background-color: #494949;
-  color: var(--black);
+  color: var(--text);
   min-height: 100vh;
 }
 
@@ -60,21 +62,24 @@ h2 {
   color: var(--dark-gray);
 }
 .green {
-  color: var(--success);
+  color: var(--open);
 }
 .red {
-  color: var(--error);
+  color: var(--closed);
 }
 .orange {
-  color: var(--warning);
+  color: var(--closing);
 }
 
 .green path {
-  fill: var(--success);
+  fill: var(--open);
 }
 .red path{
-  fill: var(--error);
+  fill: var(--closed);
 }
 .orange path{
-  fill: var(--warning);
+  fill: var(--closing);
+}
+.otro path {
+  fill: #68349A;
 }

@@ -28,7 +28,7 @@
 
 		let selectPoint = async (e) => {
 			if (e.features.length > 0) {
-
+				console.log(e.features)
 				let { data: points2, error } = await supabase
 				.from('points2')
 				.select("*")
